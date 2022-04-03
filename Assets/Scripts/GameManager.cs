@@ -6,13 +6,34 @@ public class GameManager : MonoBehaviour
 {
 
     public GameObject hazardPrefab;
-
     public int maxHazardToSpawn = 3;
+
+    public TMPro.TextMeshPro scoreText;
+
+    public int score;
+    private float timer;
+    private static bool gameOver;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnHazard());
+    }
+
+    private void Update()
+    {
+        if(gameOver)
+            return;
+
+        timer += Time.deltaTime;
+
+        if (timer >= 1f)
+        {
+            score++;
+            scoreText.text = score.ToString();
+            timer = 0;
+        }
+        
     }
 
     private IEnumerator SpawnHazard()
@@ -34,6 +55,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(timeToWait);
         yield return SpawnHazard();
 
+    }
+
+    public static void GameOver()
+    {
+        gameOver = true;
     }
 
 }
