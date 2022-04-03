@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -10,12 +11,17 @@ public class Player : MonoBehaviour
     public float maximumXValue = 5;
     public ParticleSystem deathParticles;
 
+    public GameObject mainVcam;
+    public GameObject zoomVcam;
+
     private Rigidbody rb;
+    private CinemachineImpulseSource cinemachineImpulseSource;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     // Update is called once per frame
@@ -36,8 +42,12 @@ public class Player : MonoBehaviour
         if(collision.gameObject.CompareTag("Hazard"))
         {
             GameManager.GameOver();
-            Instantiate(deathParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            Instantiate(deathParticles, transform.position, Quaternion.identity);
+            cinemachineImpulseSource.GenerateImpulse();
+
+            mainVcam.SetActive(false);
+            zoomVcam.SetActive(true);
         }
     }
 
