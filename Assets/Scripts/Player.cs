@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     public float forceMultiplier = 10f;
     public float maximumVelocity = 3f;
+    public float maximumXValue = 5;
 
     private Rigidbody rb;
 
@@ -21,8 +22,9 @@ public class Player : MonoBehaviour
     {
         var horizontalInput = Input.GetAxis("Horizontal");
 
-        if(rb.velocity.magnitude <= maximumVelocity)
+        if (rb.velocity.magnitude <= maximumVelocity)
         {
+            if ((rb.position[0] <= -maximumXValue && horizontalInput < 0) || (rb.position[0] >= maximumXValue && horizontalInput > 0)) return;
             rb.AddForce(new Vector3(horizontalInput * forceMultiplier, 0, 0));
         }
         
