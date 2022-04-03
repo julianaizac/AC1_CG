@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float forceMultiplier = 10f;
     public float maximumVelocity = 3f;
     public float maximumXValue = 5;
+    public ParticleSystem deathParticles;
 
     private Rigidbody rb;
 
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.CompareTag("Hazard"))
         {
             GameManager.GameOver();
+            Instantiate(deathParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
