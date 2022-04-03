@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public float forceMultiplier = 3f;
+    public float forceMultiplier = 10f;
     public float maximumVelocity = 3f;
 
     private Rigidbody rb;
