@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         if (rb.velocity.magnitude <= maximumVelocity)
         {
             if ((rb.position[0] <= -maximumXValue && horizontalInput < 0) || (rb.position[0] >= maximumXValue && horizontalInput > 0)) return;
-            rb.AddForce(new Vector3(horizontalInput * forceMultiplier, 0, 0));
+            rb.AddForce(new Vector3(horizontalInput * forceMultiplier * Time.deltaTime, 0, 0));
         }
         
     }
