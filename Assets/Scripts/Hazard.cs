@@ -29,16 +29,16 @@ public class Hazard : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Hazard"))
         {
+
+            Destroy(gameObject);
             Instantiate(breakingEffect, transform.position, Quaternion.identity);
 
-            if( player != null)
+            if (player != null)
             {
                 var distance = Vector3.Distance(transform.position, player.transform.position);
                 var force = 1 / distance;
 
                 cinemachineImpulseSource.GenerateImpulse(force);
-
-                Destroy(gameObject);
             }
         }
         
