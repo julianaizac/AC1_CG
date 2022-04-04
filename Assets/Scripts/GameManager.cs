@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
     public GameObject hazardPrefab;
     public int maxHazardToSpawn = 3;
 
@@ -16,9 +15,18 @@ public class GameManager : MonoBehaviour
     private float timer;
     private static bool gameOver;
 
+    private static GameManager instance;
+    public static GameManager Instance => instance;
+
+    public void Enable()
+    {
+        gameObject.SetActive(true);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         StartCoroutine(SpawnHazard());
     }
 
