@@ -11,23 +11,40 @@ public class GameManager : MonoBehaviour
     public TMPro.TextMeshProUGUI scoreText;
     public Image backgroundMenu;
 
+    public GameObject player;
+
+    public GameObject mainVcam;
+    public GameObject zoomVcam;
+
+    public GameObject gameOverMenu;
+    private bool gameOver;
+
     public int score;
     private float timer;
-    private static bool gameOver;
-
+    private Coroutine hazardsCoroutine;
+    
     private static GameManager instance;
     public static GameManager Instance => instance;
-
-    public void Enable()
-    {
-        gameObject.SetActive(true);
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        StartCoroutine(SpawnHazard());
+    }
+
+    public void OnEnable()
+    {
+        player.SetActive(true);
+
+        zoomVcam.SetActive(false);
+        mainVcam.SetActive(true);
+
+        gameOver = false;
+        scoreText.text = "0";
+        score = 0;
+        timer = 0;
+
+        hazardsCoroutine = StartCoroutine(SpawnHazard());
     }
 
     private void Update()
@@ -47,8 +64,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if(gameOver)
-            return;
+        if(gameOver) return;
 
         timer += Time.deltaTime;
 
@@ -101,9 +117,21 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public static void GameOver()
+    public void Enable()
     {
+        gameObject.SetActive(true);
+    }
+
+    public void GameOver()
+    {
+        StopCoroutine(hazardsCoroutine);
         gameOver = true;
+
+        mainVcam.SetActive(false);
+        zoomVcam.SetActive(true);
+
+        gameObject.SetActive(false);
+        gameOverMenu.SetActive(true);
     }
 
 }

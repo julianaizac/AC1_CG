@@ -11,14 +11,11 @@ public class Player : MonoBehaviour
     public float maximumXValue = 5;
     public ParticleSystem deathParticles;
 
-    public GameObject mainVcam;
-    public GameObject zoomVcam;
-
     private Rigidbody rb;
     private CinemachineImpulseSource cinemachineImpulseSource;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
         cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
@@ -44,14 +41,18 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Hazard"))
         {
-            GameManager.GameOver();
-            Destroy(gameObject);
+            GameManager.Instance.GameOver();
+            gameObject.SetActive(false);
             Instantiate(deathParticles, transform.position, Quaternion.identity);
             cinemachineImpulseSource.GenerateImpulse();
-
-            mainVcam.SetActive(false);
-            zoomVcam.SetActive(true);
         }
+    }
+
+    private void OnEnable()
+    {
+        transform.position = new Vector3(0, 0.75f, 0);
+        transform.rotation = Quaternion.identity;
+        rb.velocity = Vector3.zero;
     }
 
 
