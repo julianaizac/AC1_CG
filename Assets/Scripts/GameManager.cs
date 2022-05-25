@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         StopCoroutine(hazardsCoroutine);
-        
+
         gameOver = true;
 
         mainVcam.SetActive(false);

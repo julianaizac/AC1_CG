@@ -2086,9 +2086,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 49b95cb3d7059f245a5bc3e7d16458d8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.075
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2822,7 +2822,7 @@ MonoBehaviour:
   maximumVelocity: 3
   maximumXValue: 5
   deathParticles: {fileID: 4872404236805269801, guid: 932955f6b77f4224b9695cb0e8ff6b15, type: 3}
-  audioSourceCollision: {fileID: 594370320}
+  audioSource: {fileID: 594370320}
 --- !u!54 &594370314
 Rigidbody:
   m_ObjectHideFlags: 0
