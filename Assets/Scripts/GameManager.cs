@@ -21,8 +21,9 @@ public class GameManager : MonoBehaviour
 
     public int score;
     private float timer;
+
     private Coroutine hazardsCoroutine;
-    
+
     private static GameManager instance;
     public static GameManager Instance => instance;
 
@@ -125,6 +126,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         StopCoroutine(hazardsCoroutine);
+        
         gameOver = true;
 
         mainVcam.SetActive(false);
