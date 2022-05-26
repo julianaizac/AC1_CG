@@ -2187,9 +2187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSourceMusicaDeFundo: {fileID: 486307887}
   audioSourceMusicaDeExplosao: {fileID: 486307890}
-  audios:
+  musicasDeFundo:
   - {fileID: 8300000, guid: 49b95cb3d7059f245a5bc3e7d16458d8, type: 3}
-  - {fileID: 8300000, guid: 58bd2ea6ef56e20409312cc539943f7b, type: 3}
 --- !u!4 &486307889
 Transform:
   m_ObjectHideFlags: 0
@@ -2921,6 +2920,7 @@ MonoBehaviour:
   maximumVelocity: 3
   maximumXValue: 5
   deathParticles: {fileID: 4872404236805269801, guid: 932955f6b77f4224b9695cb0e8ff6b15, type: 3}
+  audioSourceExplosao: {fileID: 594370320}
 --- !u!54 &594370314
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3523,7 +3523,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: NaN, z: 6.495e-42, w: NaN}
+  m_BoundingSphereOverride: {x: 0, y: -4.7202693e-12, z: 4.5904e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -4531,7 +4531,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.1835e-41, y: 4.500301e-39, z: 4.545857e-39, w: 0.0000000047898574}
+  m_BoundingSphereOverride: {x: NaN, y: 3e-45, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -5946,7 +5946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5118289527538374901, guid: 12babef1e0a0501419489932693a0e47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 3.96
       objectReference: {fileID: 0}
     - target: {fileID: 5118289527538374901, guid: 12babef1e0a0501419489932693a0e47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11927,7 +11927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5118289527538374901, guid: 12babef1e0a0501419489932693a0e47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 5118289527538374901, guid: 12babef1e0a0501419489932693a0e47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13536,7 +13536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hazardPrefab: {fileID: 5690441715188641808, guid: dfb199817cb231c4dada4045a413607d, type: 3}
-  bombPrefab: {fileID: 4656294046979360518, guid: 0695039f8ad2e8546a817af61d69066a, type: 3}
+  bombPrefab: {fileID: 8649877921339928522, guid: a2179bd91c6e9ef439f209878dfadaf3, type: 3}
   maxHazardToSpawn: 3
   maxBombToSpawn: 2
   scoreText: {fileID: 658602996}
@@ -13546,6 +13546,8 @@ MonoBehaviour:
   zoomVcam: {fileID: 2050218366}
   gameOverMenu: {fileID: 70573406}
   score: 0
+  audioClipPerdeuOJogo: {fileID: 8300000, guid: 58bd2ea6ef56e20409312cc539943f7b, type: 3}
+  audioController: {fileID: 486307888}
 --- !u!4 &2075442858
 Transform:
   m_ObjectHideFlags: 0

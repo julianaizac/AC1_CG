@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public GameObject bombPrefab;
 
     public int maxHazardToSpawn = 3;
-    public int maxBombToSpawn = 2;
 
     public TMPro.TextMeshProUGUI scoreText;
     public Image backgroundMenu;
@@ -26,7 +25,6 @@ public class GameManager : MonoBehaviour
     private float timer;
 
     private Coroutine hazardsCoroutine;
-    private Coroutine bombsCoroutine;
 
     private static GameManager instance;
     public static GameManager Instance => instance;
@@ -54,7 +52,6 @@ public class GameManager : MonoBehaviour
         timer = 0;
 
         hazardsCoroutine = StartCoroutine(SpawnHazard());
-        //bombsCoroutine = StartCoroutine(SpawnBomb());
     }
 
     private void Update()
@@ -121,14 +118,10 @@ public class GameManager : MonoBehaviour
         }
 
         var timeToWait = Random.Range(0.5f, 1.5f);
-
         yield return new WaitForSeconds(timeToWait);
-        yield return SpawnHazard();
-    }
 
-    private IEnumerator SpawnBomb()
-    {
-        var bombToSpawn = Random.Range(1, maxBombToSpawn);
+        /*
+        var bombToSpawn = Random.Range(1, 2);
 
         for (int i = 0; i < bombToSpawn; i++)
         {
@@ -138,12 +131,8 @@ public class GameManager : MonoBehaviour
             var bomb = Instantiate(bombPrefab, new Vector3(x, 11, 0), Quaternion.identity);
 
             bomb.GetComponent<Rigidbody>().drag = drag;
-        }
-
-        var timeToWait = Random.Range(0.5f, 1.5f);
-
-        yield return new WaitForSeconds(timeToWait);
-        yield return SpawnBomb();
+        }*/
+        yield return SpawnHazard();
     }
 
     public void Enable()
@@ -154,9 +143,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         audioController.ToqueAudioCollision(audioClipPerdeuOJogo);
-
         StopCoroutine(hazardsCoroutine);
-        //StopCoroutine(bombsCoroutine);
 
         gameOver = true;
 
