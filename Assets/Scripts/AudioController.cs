@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-
     public AudioSource audioSourceMusicaDeFundo;
+    public AudioSource audioSourceMusicaDeExplosao;
     public AudioClip[] musicasDeFundo;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        int IndexDaMusicaDeFundo = Random.Range(0, musicasDeFundo.Length);
-        AudioClip musicasDeFundoDessaFase = musicasDeFundo[IndexDaMusicaDeFundo];
-        audioSourceMusicaDeFundo.clip = musicasDeFundoDessaFase;
+        AudioClip musicaDeFundo = musicasDeFundo[0];
+        audioSourceMusicaDeFundo.clip = musicaDeFundo;
         audioSourceMusicaDeFundo.loop = true;
         audioSourceMusicaDeFundo.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ToqueAudioCollision(AudioClip clip)
     {
-        
+        audioSourceMusicaDeExplosao.clip = clip;
+        audioSourceMusicaDeExplosao.Play();
     }
+
 }

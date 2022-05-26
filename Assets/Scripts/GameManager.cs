@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject hazardPrefab;
+    public GameObject bombPrefab;
+
     public int maxHazardToSpawn = 3;
+    public int maxBombToSpawn = 2;
 
     public TMPro.TextMeshProUGUI scoreText;
     public Image backgroundMenu;
@@ -23,9 +26,14 @@ public class GameManager : MonoBehaviour
     private float timer;
 
     private Coroutine hazardsCoroutine;
+    private Coroutine bombsCoroutine;
 
     private static GameManager instance;
     public static GameManager Instance => instance;
+
+    public AudioClip audioClipPerdeuOJogo;
+    public AudioController audioController;
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +54,7 @@ public class GameManager : MonoBehaviour
         timer = 0;
 
         hazardsCoroutine = StartCoroutine(SpawnHazard());
+        //bombsCoroutine = StartCoroutine(SpawnBomb());
     }
 
     private void Update()
@@ -115,7 +124,26 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(timeToWait);
         yield return SpawnHazard();
+    }
 
+    private IEnumerator SpawnBomb()
+    {
+        var bombToSpawn = Random.Range(1, maxBombToSpawn);
+
+        for (int i = 0; i < bombToSpawn; i++)
+        {
+            var x = Random.Range(-6, 6);
+            var drag = Random.Range(0f, 2f);
+
+            var bomb = Instantiate(bombPrefab, new Vector3(x, 11, 0), Quaternion.identity);
+
+            bomb.GetComponent<Rigidbody>().drag = drag;
+        }
+
+        var timeToWait = Random.Range(0.5f, 1.5f);
+
+        yield return new WaitForSeconds(timeToWait);
+        yield return SpawnBomb();
     }
 
     public void Enable()
@@ -125,7 +153,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        audioController.ToqueAudioCollision(audioClipPerdeuOJogo);
+
         StopCoroutine(hazardsCoroutine);
+        //StopCoroutine(bombsCoroutine);
 
         gameOver = true;
 

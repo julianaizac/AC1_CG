@@ -29,7 +29,6 @@ public class Hazard : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Hazard"))
         {
-
             Destroy(gameObject);
             Instantiate(breakingEffect, transform.position, Quaternion.identity);
 

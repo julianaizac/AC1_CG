@@ -10,7 +10,11 @@ public class Player : MonoBehaviour
     public float maximumVelocity = 3f;
     public float maximumXValue = 5;
     public ParticleSystem deathParticles;
-    public AudioSource audioSource;
+
+    //public AudioClip audioClip;
+    //public AudioController audioController;
+
+    public AudioSource audioSourceExplosao;
 
     private Rigidbody rb;
     private CinemachineImpulseSource cinemachineImpulseSource;
@@ -42,7 +46,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Hazard"))
         {
-            // audioSource.Play();
+            //audioSourceExplosao.Play();
             GameManager.Instance.GameOver();
             gameObject.SetActive(false);
             Instantiate(deathParticles, transform.position, Quaternion.identity);
