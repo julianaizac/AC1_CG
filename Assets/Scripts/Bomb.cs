@@ -27,7 +27,7 @@ public class Bomb : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Bomb"))
+        if (!collision.gameObject.CompareTag("Bomb") && !collision.gameObject.CompareTag("Hazard"))
         {
 
             Destroy(gameObject);

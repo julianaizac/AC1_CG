@@ -27,7 +27,7 @@ public class Hazard : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Hazard"))
+        if (!collision.gameObject.CompareTag("Bomb") && !collision.gameObject.CompareTag("Hazard"))
         {
             Destroy(gameObject);
             Instantiate(breakingEffect, transform.position, Quaternion.identity);

@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
         var timeToWait = Random.Range(0.5f, 1.5f);
         yield return new WaitForSeconds(timeToWait);
 
-        /*
+        
         var bombToSpawn = Random.Range(1, 2);
 
         for (int i = 0; i < bombToSpawn; i++)
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             var bomb = Instantiate(bombPrefab, new Vector3(x, 11, 0), Quaternion.identity);
 
             bomb.GetComponent<Rigidbody>().drag = drag;
-        }*/
+        }
         yield return SpawnHazard();
     }
 

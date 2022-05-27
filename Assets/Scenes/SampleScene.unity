@@ -3523,7 +3523,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -4.7202693e-12, z: 4.5904e-41, w: 0}
+  m_BoundingSphereOverride: {x: 3e-45, y: NaN, z: 1e-45, w: 1e-45}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -4531,7 +4531,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: NaN, y: 3e-45, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: NaN, z: 7e-45, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -13536,9 +13536,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hazardPrefab: {fileID: 5690441715188641808, guid: dfb199817cb231c4dada4045a413607d, type: 3}
-  bombPrefab: {fileID: 8649877921339928522, guid: a2179bd91c6e9ef439f209878dfadaf3, type: 3}
+  bombPrefab: {fileID: 4506119294398783763, guid: 30166d7fba696f341924c7e3dfeef3ee, type: 3}
   maxHazardToSpawn: 3
-  maxBombToSpawn: 2
   scoreText: {fileID: 658602996}
   backgroundMenu: {fileID: 1989848239}
   player: {fileID: 594370312}
