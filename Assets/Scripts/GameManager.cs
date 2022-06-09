@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject hazardPrefab;
+    public GameObject bombPrefab;
+
     public int maxHazardToSpawn = 3;
 
     public TMPro.TextMeshProUGUI scoreText;
@@ -21,10 +23,15 @@ public class GameManager : MonoBehaviour
 
     public int score;
     private float timer;
+
     private Coroutine hazardsCoroutine;
-    
+
     private static GameManager instance;
     public static GameManager Instance => instance;
+
+    public AudioClip audioClipPerdeuOJogo;
+    public AudioController audioController;
+
 
     // Start is called before the first frame update
     void Start()
@@ -111,10 +118,21 @@ public class GameManager : MonoBehaviour
         }
 
         var timeToWait = Random.Range(0.5f, 1.5f);
-
         yield return new WaitForSeconds(timeToWait);
-        yield return SpawnHazard();
 
+        
+        var bombToSpawn = Random.Range(1, 2);
+
+        for (int i = 0; i < bombToSpawn; i++)
+        {
+            var x = Random.Range(-6, 6);
+            var drag = Random.Range(0f, 2f);
+
+            var bomb = Instantiate(bombPrefab, new Vector3(x, 11, 0), Quaternion.identity);
+
+            bomb.GetComponent<Rigidbody>().drag = drag;
+        }
+        yield return SpawnHazard();
     }
 
     public void Enable()
@@ -124,7 +142,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        audioController.ToqueAudioCollision(audioClipPerdeuOJogo);
         StopCoroutine(hazardsCoroutine);
+
         gameOver = true;
 
         mainVcam.SetActive(false);
