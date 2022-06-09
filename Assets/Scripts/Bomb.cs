@@ -15,13 +15,13 @@ public class Bomb : MonoBehaviour
         cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
         player = FindObjectOfType<Player>();
 
-        var xRotation = Random.Range(90f, 180f);
-        rotation = new Vector3(1, 0);
+        var xRotation = Random.Range(0.5f, 1f);
+        rotation = new Vector3(xRotation, 0);
     }
 
     private void Update()
     {
-        transform.Rotate(rotation * Time.deltaTime);
+        transform.Rotate(rotation);
     }
 
 

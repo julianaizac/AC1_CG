@@ -364,7 +364,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 30291215a1f6b584090e4d4bba9a340f, type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 30291215a1f6b584090e4d4bba9a340f, type: 3}
       propertyPath: m_LocalScale.x
@@ -721,7 +721,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 96e453bb721c84a4d97195be785763b1, type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96e453bb721c84a4d97195be785763b1, type: 3}
       propertyPath: m_LocalScale.x
@@ -2696,7 +2696,6 @@ Transform:
   - {fileID: 1237915256}
   - {fileID: 2135868598}
   - {fileID: 1570828369}
-  - {fileID: 782697388}
   - {fileID: 1853399384}
   - {fileID: 754373506}
   - {fileID: 858406610}
@@ -2781,8 +2780,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 45}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &591286986
 MonoBehaviour:
@@ -2831,8 +2830,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2896,7 +2895,6 @@ GameObject:
   - component: {fileID: 594370314}
   - component: {fileID: 594370313}
   - component: {fileID: 594370319}
-  - component: {fileID: 594370320}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2920,7 +2918,6 @@ MonoBehaviour:
   maximumVelocity: 3
   maximumXValue: 5
   deathParticles: {fileID: 4872404236805269801, guid: 932955f6b77f4224b9695cb0e8ff6b15, type: 3}
-  audioSourceExplosao: {fileID: 594370320}
 --- !u!54 &594370314
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3055,102 +3052,6 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 1000
     m_PropagationSpeed: 343
---- !u!82 &594370320
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 594370312}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 58bd2ea6ef56e20409312cc539943f7b, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!4 &619719435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2cecf3f6b4df6864c8c7e7bf4fcd067d, type: 3}
@@ -3523,7 +3424,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3e-45, y: NaN, z: 1e-45, w: 1e-45}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3551,7 +3452,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a70ce3103daf8d547a7210d710079f99, type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70ce3103daf8d547a7210d710079f99, type: 3}
       propertyPath: m_LocalScale.x
@@ -3782,7 +3683,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.2, z: 0.5}
   m_Children: []
   m_Father: {fileID: 560218519}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: -13.53, z: 0}
 --- !u!1001 &756693591
 PrefabInstance:
@@ -3926,11 +3827,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4608e24b18a15c24e962fd70de7fd567, type: 3}
   m_PrefabInstance: {fileID: 2092030714}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &782697388 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-  m_PrefabInstance: {fileID: 1678566906}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &784511823 stripped
 Transform:
@@ -4531,7 +4427,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: NaN, z: 7e-45, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 3e-45, z: 5.682e-42, w: 6e-44}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -4736,7 +4632,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e0a542925d012f24393232dcdbca369b, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0a542925d012f24393232dcdbca369b, type: 3}
       propertyPath: m_LocalScale.x
@@ -4805,7 +4701,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f9f96aaf4e3371c40adf81469b016852, type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9f96aaf4e3371c40adf81469b016852, type: 3}
       propertyPath: m_LocalScale.x
@@ -5598,8 +5494,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5657,7 +5553,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 94a268e97ee365e45b84b558b2c78dd3, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94a268e97ee365e45b84b558b2c78dd3, type: 3}
       propertyPath: m_LocalScale.x
@@ -10991,7 +10887,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a2a3a439b8eef9b49923184fced6871c, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a2a3a439b8eef9b49923184fced6871c, type: 3}
       propertyPath: m_LocalScale.x
@@ -11357,8 +11253,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11976,75 +11872,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2cecf3f6b4df6864c8c7e7bf4fcd067d, type: 3}
   m_PrefabInstance: {fileID: 1570886629}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1678566906
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 560218519}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.146
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.577
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.16350514
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.04961226
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.56158197
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.8095865
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -112.253
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 164.168
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -326.499
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
-      propertyPath: m_Name
-      value: Bomb
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f7a4e953fa6cec44381c5820fc30e5d9, type: 3}
 --- !u!4 &1702831271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2cecf3f6b4df6864c8c7e7bf4fcd067d, type: 3}
@@ -12519,7 +12346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 122}
+  m_AnchoredPosition: {x: 0, y: 70}
   m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1824235118
@@ -12551,8 +12378,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286814463
-  m_fontColor: {r: 1, g: 0.59607846, b: 0.5137255, a: 1}
+    rgba: 4294932992
+  m_fontColor: {r: 0, g: 0.47969294, b: 1, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
@@ -12569,8 +12396,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12806,8 +12633,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 122}
-  m_SizeDelta: {x: 300, y: 80}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928168951
 MonoBehaviour:
@@ -12839,7 +12666,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4286814463
-  m_fontColor: {r: 1, g: 0.59607846, b: 0.5137255, a: 1}
+  m_fontColor: {r: 1, g: 0, b: 0.07831144, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
@@ -12856,8 +12683,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12920,7 +12747,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2590973c43bf0a24499aab1807aec859, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2590973c43bf0a24499aab1807aec859, type: 3}
       propertyPath: m_LocalScale.x
@@ -12994,7 +12821,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 404061f1309d3754c9c5571a25a572cb, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 404061f1309d3754c9c5571a25a572cb, type: 3}
       propertyPath: m_LocalScale.x
@@ -13409,7 +13236,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070185275
 MonoBehaviour:
@@ -13535,9 +13362,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e607b71d08a7c4695ef845ee5901c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazardPrefab: {fileID: 5690441715188641808, guid: dfb199817cb231c4dada4045a413607d, type: 3}
-  bombPrefab: {fileID: 4506119294398783763, guid: 30166d7fba696f341924c7e3dfeef3ee, type: 3}
-  maxHazardToSpawn: 3
+  woodenCrateHazardPrefab: {fileID: 5690441715188641808, guid: dfb199817cb231c4dada4045a413607d, type: 3}
+  blueCrateHazardPrefab: {fileID: 4506119294398783763, guid: 30166d7fba696f341924c7e3dfeef3ee, type: 3}
+  bombPrefab: {fileID: 8634534673234637920, guid: 8fe4528553ea46a48ac83777c960d149, type: 3}
+  maxWoodenCrateHazardToSpawn: 2
+  maxBlueCrateHazardToSpawn: 2
+  maxBombToSpawn: 2
   scoreText: {fileID: 658602996}
   backgroundMenu: {fileID: 1989848239}
   player: {fileID: 594370312}

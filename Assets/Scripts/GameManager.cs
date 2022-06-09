@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject hazardPrefab;
+    public GameObject woodenCrateHazardPrefab;
+    public GameObject blueCrateHazardPrefab;
     public GameObject bombPrefab;
 
-    public int maxHazardToSpawn = 3;
+    public int maxWoodenCrateHazardToSpawn = 2;
+    public int maxBlueCrateHazardToSpawn = 2;
+    public int maxBombToSpawn = 2;
 
     public TMPro.TextMeshProUGUI scoreText;
     public Image backgroundMenu;
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         timer = 0;
 
-        hazardsCoroutine = StartCoroutine(SpawnHazard());
+        hazardsCoroutine = StartCoroutine(SpawnHazardAndBomb());
     }
 
     private void Update()
@@ -103,25 +106,37 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private IEnumerator SpawnHazard()
+    private IEnumerator SpawnHazardAndBomb()
     {
-        var hazardToSpawn = Random.Range(1, maxHazardToSpawn);
+        var woodenCrateToSpawn = Random.Range(1, maxWoodenCrateHazardToSpawn);
+        var blueCrateHazardToSpawn = Random.Range(1, maxBlueCrateHazardToSpawn);
+        var bombToSpawn = Random.Range(1, maxBombToSpawn);
 
-        for(int i = 0; i < hazardToSpawn; i++)
+        for (int i = 0; i < woodenCrateToSpawn; i++)
         {
             var x = Random.Range(-6, 6);
             var drag = Random.Range(0f, 2f);
 
-            var hazard = Instantiate(hazardPrefab, new Vector3(x, 11, 0), Quaternion.identity);
+            var woodenCrate = Instantiate(woodenCrateHazardPrefab, new Vector3(x, 11, 0), Quaternion.identity);
 
-            hazard.GetComponent<Rigidbody>().drag = drag;
+            woodenCrate.GetComponent<Rigidbody>().drag = drag;
         }
 
         var timeToWait = Random.Range(0.5f, 1.5f);
         yield return new WaitForSeconds(timeToWait);
 
-        
-        var bombToSpawn = Random.Range(1, 2);
+        for (int i = 0; i < blueCrateHazardToSpawn; i++)
+        {
+            var x = Random.Range(-6, 6);
+            var drag = Random.Range(0f, 2f);
+
+            var blueCrate = Instantiate(blueCrateHazardPrefab, new Vector3(x, 11, 0), Quaternion.identity);
+
+            blueCrate.GetComponent<Rigidbody>().drag = drag;
+        }
+
+        timeToWait = Random.Range(0.5f, 1.5f);
+        yield return new WaitForSeconds(timeToWait);
 
         for (int i = 0; i < bombToSpawn; i++)
         {
@@ -132,7 +147,8 @@ public class GameManager : MonoBehaviour
 
             bomb.GetComponent<Rigidbody>().drag = drag;
         }
-        yield return SpawnHazard();
+
+        yield return SpawnHazardAndBomb();
     }
 
     public void Enable()

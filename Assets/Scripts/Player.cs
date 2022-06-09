@@ -11,22 +11,17 @@ public class Player : MonoBehaviour
     public float maximumXValue = 5;
     public ParticleSystem deathParticles;
 
-    //public AudioClip audioClip;
-    //public AudioController audioController;
-
-    public AudioSource audioSourceExplosao;
-
     private Rigidbody rb;
     private CinemachineImpulseSource cinemachineImpulseSource;
 
-    // Start is called before the first frame update
+    
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if(GameManager.Instance == null)
@@ -46,7 +41,6 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Bomb"))
         {
-            //audioSourceExplosao.Play();
             GameManager.Instance.GameOver();
             gameObject.SetActive(false);
             Instantiate(deathParticles, transform.position, Quaternion.identity);
